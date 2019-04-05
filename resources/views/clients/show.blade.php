@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{{route('clients.index')}}">Clients</a>
+        </li>
+        <li class="breadcrumb-item active">Show client</li>
+    </ol>
+
     <div class="card mb-3">
         <div class="card-header">
             <i class="fas fa-user-friends"></i> Clients

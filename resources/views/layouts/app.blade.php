@@ -33,11 +33,10 @@
     <a class="navbar-brand mr-1" href="{{ route('home') }}">
         {{ config('app.name', 'Laravel') }}
     </a>
-    <!-- Navbar Search -->
+
     <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
     </form>
 
-    <!-- Navbar -->
     <ul class="navbar-nav ml-auto ml-md-0">
         @guest
             <li class="nav-item">
@@ -48,13 +47,31 @@
                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                 </li>
             @endif
-        @else
-            <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
+        @endguest
+    </ul>
 
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+</nav>
+
+<div id="wrapper">
+
+    @auth
+
+        <ul class="sidebar navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route('home')}}">
+                    <i class="fas fa-home"></i><span> Home</span>
+                </a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>{{ Auth::user()->name }}</span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+                    <h6 class="dropdown-header">Login Screens:</h6>
+                    <a class="dropdown-item" href="login.html">Settings</a>
+
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -64,27 +81,18 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
+
+                    <div class="dropdown-divider"></div>
+                    <h6 class="dropdown-header">Other Pages:</h6>
+                    <a class="dropdown-item" href="404.html">404 Page</a>
+                    <a class="dropdown-item" href="blank.html">Blank Page</a>
                 </div>
             </li>
-        @endguest
-    </ul>
 
-</nav>
 
-<div id="wrapper">
-
-    @auth
-        <ul class="sidebar navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{route('home')}}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Home</span>
-                </a>
-            </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('clients.index')}}">
-                    <i class="fas fa-user-friends"></i>
-                    <span>Clients</span>
+                    <i class="fas fa-user-friends"></i><span> Clients</span>
                 </a>
             </li>
 
@@ -108,22 +116,6 @@
 
         @yield('content')
 
-        <!-- DataTables Example
-            <div class="card mb-3">
-                <div class="card-header">
-                    <i class="fas fa-table"></i> Data Table Example
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-
-
-                        </table>
-                    </div>
-                </div>
-                <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-            </div> -->
-
         </div>
     </div>
 
@@ -139,7 +131,6 @@
 </div>
 
 <script src="{{asset('vendor/jquery/jquery.js')}}" crossorigin="anonymous"></script>
-<script src="{{asset('vendor/bootstrap/js/bootstrap.js')}}" crossorigin="anonymous"></script>
 
 @yield('scripts')
 

@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{{route('clients.index')}}">Clients</a>
+        </li>
+        <li class="breadcrumb-item active">{{isset($client) ? "Edit Client" : 'Create Client'}}</li>
+    </ol>
+
     <div class="card">
         <div class="card-header">
                 <i class="fas fa-user-friends"></i> {{isset($client) ? 'Edit Client' : 'Create Client'}}
