@@ -83,7 +83,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('clients.index')}}">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-user-friends"></i>
                     <span>Clients</span>
                 </a>
             </li>
@@ -96,6 +96,15 @@
     <div id="content-wrapper">
 
         <div class="container-fluid">
+            @if(session()->has('success'))
+
+                <div class="alert alert-success">
+
+                    {{session()->get('success')}}
+
+                </div>
+
+            @endif
 
         @yield('content')
 
