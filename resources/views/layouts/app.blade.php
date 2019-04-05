@@ -138,7 +138,10 @@
 
 </div>
 
+<script src="{{asset('vendor/jquery/jquery.js')}}" crossorigin="anonymous"></script>
+<script src="{{asset('vendor/bootstrap/js/bootstrap.js')}}" crossorigin="anonymous"></script>
 
+@yield('scripts')
 
 </body>
 </html>
