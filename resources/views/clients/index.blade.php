@@ -3,7 +3,7 @@
 @section('content')
 
     <ol class="breadcrumb">
-        <li class="breadcrumb-item active">index</li>
+        <li class="breadcrumb-item active">Clients</li>
     </ol>
 
     <div class="card mb-3">

@@ -4,18 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Client;
 use App\Http\Requests\Clients\UpdateClientRequest;
-use Illuminate\Http\Request;
+use Illuminate\Http\Requests;
 use App\Http\Requests\Clients\CreateClientRequest;
 
 
 
 class ClientsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index() {
 
         return view('clients.index')->with('clients', Client::all());

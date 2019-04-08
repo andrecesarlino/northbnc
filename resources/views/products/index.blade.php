@@ -39,20 +39,19 @@
 
                     <tbody>
 
-                    @foreach($clients as $client)
+                    @foreach($products as $product)
 
                         <tr>
 
-                            <td>{{$produt->nameProduct}}</td>
-                            <td>{{$produt->quantidade}}</td>
-                            <td>{{$produt->precoUnitario}}</td>
-                            <td>{{$produt->UnidadeEmEstoque}}</td>
-                            <td>{{$produt->UnidadeEmOrdem}}</td>
-                            <td>{{$produt->NivelDeReposicao}}</td>
-                            <td>{{$produt->descontinuado}}</td>
+                            <td>{{$product->nameProduct}}</td>
+                            <td>{{$product->quantidade}}</td>
+                            <td>{{$product->precoUnitario}}</td>
+                            <td>{{$product->UnidadeEmEstoque}}</td>
+                            <td>{{$product->UnidadeEmOrdem}}</td>
+                            <td>{{$product->NivelDeReposicao}}</td>
+                            <td>{{$product->descontinuado}}</td>
                             <td>
-                                <a href="{{route('products.show', $product->id)}}" class="btn btn-secondary btn-sm"><i class="fas fa-binoculars" style="color:white"></i></a>
-                                <a href="{{route('products.edit', $product->id)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit" style="color:white"></i></a>
+
 
                                 <button type="button" class="btn btn-danger btn-sm" onclick="handleDelete({{$product->id}})"><i class="fas fa-trash-alt"></i></button>
 
