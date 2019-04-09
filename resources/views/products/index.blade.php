@@ -52,7 +52,8 @@
                             <td>{{$product->descontinuado}}</td>
                             <td>
 
-
+                                <a href="{{route('products.show', $product->id)}}" class="btn btn-secondary btn-sm"><i class="fas fa-binoculars" style="color:white"></i></a>
+                                <a href="{{route('products.edit', $product->id)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit" style="color:white"></i></a>
                                 <button type="button" class="btn btn-danger btn-sm" onclick="handleDelete({{$product->id}})"><i class="fas fa-trash-alt"></i></button>
 
                             </td>
