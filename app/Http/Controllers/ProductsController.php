@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateProductRequest;
 use App\Product;
-use Illuminate\Http\Request;
 use App\Http\Requests\Products\CreateProductRequest;
-use App\Http\Requests\Products\UpdateProductRequest;
+use Illuminate\Http\Requests;
+
 
 
 class ProductsController extends Controller

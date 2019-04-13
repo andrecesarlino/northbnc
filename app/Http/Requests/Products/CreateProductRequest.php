@@ -1,37 +1,26 @@
 <?php
 
-namespace App\Http\Requests\Products {
-
-    use Illuminate\Foundation\Http\FormRequest;
+namespace App\Http\Requests\Products;
+use Illuminate\Foundation\Http\FormRequest;
 
     class CreateProductRequest extends FormRequest
     {
-        /**
-         * Determine if the user is authorized to make this request.
-         *
-         * @return bool
-         */
         public function authorize()
         {
             return true;
         }
 
-        /**
-         * Get the validation rules that apply to the request.
-         *
-         * @return array
-         */
         public function rules()
         {
             return [
                 'nameProduct' => 'required',
-                'quantidade' =>'required',
-                'precoUnitario'=>'required',
-                'UnidadeEmEstoque'=>'required',
-                'UnidadeEmOrdem'=>'required',
-                'NivelDeReposicao'=>'required',
-                'descontinuado'=>'required',
+                'quantidade' => 'required',
+                'precoUnitario' => 'required',
+                'UnidadeEmEstoque' => 'required',
+                'UnidadeEmOrdem' => 'required',
+                'NivelDeReposicao' => 'required',
+                'descontinuado' => 'required',
             ];
         }
     }
-}
+

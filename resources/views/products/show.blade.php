@@ -17,18 +17,23 @@
 
 
             <div class=" my-2">
-                <a href="{{route('products.create')}}" class="btn btn-success"><i class="fas fa-plus"></i> Create new Client</a>
-                <a href="{{route('products.edit', $product->id)}}" class="btn btn-primary"><i class="fas fa-edit" style="color:white"></i> Edit Client</a>
-                <button type="button" class="btn btn-danger" onclick="handleDelete({{$product->id}})"><i class="fas fa-trash-alt"></i> Delete</button>
+                <a href="{{route('products.create')}}" class="btn btn-success"><i class="fas fa-plus"></i>New Product</a>
+                <a href="{{route('products.edit', $product->id)}}" class="btn btn-primary"><i class="fas fa-edit" style="color:white"></i> Edit Product</a>
+                <button type="button" class="btn btn-danger" onclick="handleDelete({{$product->id}})"><i class="fas fa-trash-alt"></i> Delete Product</button>
             </div>
             <ul class="list-group list-group-flush ">
                 <li class="list-group-item list-group-item-action"><strong>Product Name:</strong> {{$product->nameProduct}}</li>
-
+                <li class="list-group-item list-group-item-action"><strong>Quantidade:</strong> {{$product->quantidade}}</li>
+                <li class="list-group-item list-group-item-action"><strong>Preço Unitário:</strong> {{$product->precoUnitario}}</li>
+                <li class="list-group-item list-group-item-action"><strong>Unidade em Estoque:</strong> {{$product->UnidadeEmEstoque}}</li>
+                <li class="list-group-item list-group-item-action"><strong>Unidade em Ordem:</strong> {{$product->UnidadeEmOrdem}}</li>
+                <li class="list-group-item list-group-item-action"><strong>Nivel de Reposição:</strong> {{$product->NivelDeReposicao}}</li>
+                <li class="list-group-item list-group-item-action"><strong>Descontinuado:</strong> {{$product->descontinuado}}</li>
             </ul>
 
         </div>
 
-        <form action="" method="POST" id="deleteClientForm">
+        <form action="" method="POST" id="deleteProductForm">
 
             @csrf
 
@@ -39,18 +44,14 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="deleteClientForm">Delete Client</h5>
+                            <h5 class="modal-title" id="deleteProductForm">Delete Product</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
                             <p class="text-center text-bold">
-
-
                                 Are you sure you want to delete?
-
-
                             </p>
                         </div>
                         <div class="modal-footer">
@@ -71,16 +72,11 @@
     <script>
 
         function handleDelete(id) {
-
-
-
-            var form = document.getElementById('deleteClientForm')
+            var form = document.getElementById('deleteProductForm')
 
             form.action = '/products/' + id
 
             $('#deleteModal').modal('show')
-
-
         }
     </script>
 

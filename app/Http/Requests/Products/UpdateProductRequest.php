@@ -25,12 +25,12 @@ class UpdateProductRequest extends FormRequest
     {
         return [
             'nameProduct' => 'required',
-            'quantidade' =>'required',
-            'precoUnitario'=>'required',
-            'UnidadeEmEstoque'=>'required',
-            'UnidadeEmOrdem'=>'required',
-            'NivelDeReposicao'=>'required',
-            'descontinuado'=>'required',
+            'quantidade' =>' required',
+            'precoUnitario' =>' required',
+            'UnidadeEmEstoque' => 'required',
+            'UnidadeEmOrdem' => 'required',
+            'NivelDeReposicao' => 'required',
+            'descontinuado' => 'required',
         ];
     }
 }

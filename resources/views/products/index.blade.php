@@ -68,7 +68,7 @@
                 </table>
             </div>
 
-            <form action="" method="POST" id="deleteClientForm">
+            <form action="" method="POST" id="deleteProductForm">
 
                 @csrf
 
@@ -79,7 +79,7 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="deleteClientForm">Delete Product</h5>
+                                <h5 class="modal-title" id="deleteProductForm">Delete Product</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
@@ -114,7 +114,7 @@
     <script>
 
         function handleDelete(id) {
-            var form = document.getElementById('deleteClientForm')
+            var form = document.getElementById('deleteProductForm')
 
             form.action = '/clients/' + id
 
