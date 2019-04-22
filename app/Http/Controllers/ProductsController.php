@@ -26,8 +26,8 @@ class ProductsController extends Controller
 
         Product::create([
             'nameProduct' => $request->nameProduct,
-            'quantiade' => $request->quantidade,
-            'precoUnitario' => $request->precoUnico,
+            'quantidade' => $request->quantidade,
+            'precoUnitario' => $request->precoUnitario,
             'UnidadeEmEstoque' => $request->UnidadeEmEstoque,
             'UnidadeEmOrdem' => $request->UnidadeEmOrdem,
             'NivelDeReposicao'=> $request->NivelDeReposicao,
@@ -55,8 +55,8 @@ class ProductsController extends Controller
         $product->update([
 
             'nameProduct' => $request->nameProduct,
-            'quantiade' => $request->quantidade,
-            'precoUnitario' => $request->precoUnico,
+            'quantidade' => $request->quantidade,
+            'precoUnitario' => $request->precoUnitario,
             'UnidadeEmEstoque' => $request->UnidadeEmEstoque,
             'UnidadeEmOrdem' => $request->UnidadeEmOrdem,
             'NivelDeReposicao'=> $request->NivelDeReposicao,

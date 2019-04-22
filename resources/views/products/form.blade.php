@@ -45,7 +45,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="productName">Product Name</label>
-                        <input type="text" class="form-control" id="productName" name="productName" value="{{isset($product) ? $product->nameProduct : ''}}" placeholder="Product Name">
+                        <input type="text" class="form-control" id="productName" name="nameProduct" value="{{isset($product) ? $product->nameProduct : ''}}" placeholder="Product Name">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="quantidade">Quantidade</label>

@@ -27,12 +27,12 @@
 
 
                     <th>Product Name</th>
-                    <td>Quantiade</td>
-                    <td>Preco Unitario</td>
-                    <td>Unidade Em Estoque</td>
-                    <td>Unidade Em Ordem</td>
-                    <td>Nivel De Reposicao</td>
-                    <td>Descontinuado</td>
+                    <th>Quantiade</th>
+                    <th>Preco Unitario</th>
+                    <th>Unidade Em Estoque</th>
+                    <th>Unidade Em Ordem</th>
+                    <th>Nivel De Reposicao</th>
+                    <th>Descontinuado</th>
                     <th class="col-sm-1">Action</th>
 
                     </thead>
@@ -116,7 +116,7 @@
         function handleDelete(id) {
             var form = document.getElementById('deleteProductForm')
 
-            form.action = '/clients/' + id
+            form.action = '/products/' + id
 
             $('#deleteModal').modal('show')
 
