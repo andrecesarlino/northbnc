@@ -4,15 +4,12 @@ use Faker\Generator as Faker;
 
 $factory->define(\App\Client::class, function (Faker $faker) {
     return [
-        'nameCompany' => $faker->company,
-        'nameContact' => $faker->name('1'),
-        'titleContact' => $faker->sentence('2'),
-        'address' => $faker->address,
-        'city' => $faker->city,
-        'region' => $faker->sentence('1'),
-        'zipCode' => $faker->randomNumber('8'),
-        'country' => $faker->country,
-        'phone' => $faker->phoneNumber,
-        'fax' => $faker->phoneNumber,
+        'name' => $faker->name('1'),
+        'surName' => $faker->name('1'),
+        'cpfCnpj' => $faker->randomNumber('9'),
+        'rg' => $faker->randomNumber('9'),
+        'dateBorn' => $faker->dateTimeThisMonth(),
+        'dateAdmission' => $faker->dateTimeThisMonth(),
+        'photo' => $faker->sentence('1')
     ];
 });

@@ -15,16 +15,12 @@ class CreateClientRequest extends FormRequest
     public function rules()
     {
         return [
-            'nameCompany' => 'required',
-            'nameContact' => 'required',
-            'titleContact' => 'required',
-            'address' => 'required',
-            'city' => 'required',
-            'region' => 'required',
-            'zipCode' => 'required',
-            'country' => 'required',
-            'phone' => 'required',
-            'fax' => 'required'
+            'name' => 'required',
+            'surName' => 'required',
+            'cpfCnpj' => 'required',
+            'rg' => 'required',
+            'dateBorn' => 'required',
+            'photo' => 'required|image'
         ];
     }
 }

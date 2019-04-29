@@ -30,17 +30,17 @@ class ClientsController extends Controller
 
     public function store(CreateClientRequest $request) {
 
+        $image = $request->photo->store('clients');
+
         Client::create([
-            'nameCompany' => $request->nameCompany,
-            'nameContact' => $request->nameContact,
-            'titleContact' => $request->titleContact,
-            'address' => $request->address,
-            'city' => $request->city,
-            'region' => $request->region,
-            'zipCode' => $request->zipCode,
-            'country' => $request->country,
-            'phone' => $request->phone,
-            'fax' => $request->fax
+
+            'name' => $request->name,
+            'surName' => $request->surName,
+            'cpfCnpj' => $request->cpfCnpj,
+            'rg' => $request->rg,
+            'dateBorn' => $request->dateBorn,
+            'dateAdmission' => $request->dateAdmission,
+            'photo' => $image
         ]);
 
         session()->flash('success', 'Client created successfully');
@@ -66,19 +66,16 @@ class ClientsController extends Controller
 
 
     public function update(UpdateClientRequest $request, Client $client) {
+        $image = $request->photo->store('clients');
 
         $client->update([
-
-            'nameCompany' => $request->nameCompany,
-            'nameContact' => $request->nameContact,
-            'titleContact' => $request->titleContact,
-            'address' => $request->address,
-            'city' => $request->city,
-            'region' => $request->region,
-            'zipCode' => $request->zipCode,
-            'country' => $request->country,
-            'phone' => $request->phone,
-            'fax' => $request->fax
+            'name' => $request->name,
+            'surName' => $request->surName,
+            'cpfCnpj' => $request->cpfCnpj,
+            'rg' => $request->rg,
+            'dateBorn' => $request->dateBorn,
+            'dateAdmission' => $request->dateAdmission,
+            'photo' => $image
 
         ]);
 
