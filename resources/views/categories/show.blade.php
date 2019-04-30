@@ -3,40 +3,36 @@
 @section('content')
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="{{route('clients.index')}}">Clients</a>
+            <a href="{{route('categories.index')}}">Categories</a>
         </li>
-        <li class="breadcrumb-item active">Show client</li>
+        <li class="breadcrumb-item active">Show Categories</li>
     </ol>
 
 
     <div class="card mb-3">
         <div class="card-header">
-            <i class="fas fa-user-friends"></i> Clients
+            <i class="fas fa-user-friends"></i> Categories
         </div>
 
         <div class="card-body">
 
 
             <div class=" my-2">
-                <a href="{{route('clients.create')}}" class="btn btn-success"><i class="fas fa-plus"></i> Create new Client</a>
-                <a href="{{route('clients.edit', $client->id)}}" class="btn btn-primary"><i class="fas fa-edit" style="color:white"></i> Edit Client</a>
-                <button type="button" class="btn btn-danger" onclick="handleDelete({{$client->id}})"><i class="fas fa-trash-alt"></i> Delete</button>
+                <a href="{{route('categories.create')}}" class="btn btn-success"><i class="fas fa-plus"></i> Create new Categories</a>
+                <a href="{{route('categories.edit', $category->id)}}" class="btn btn-primary"><i class="fas fa-edit" style="color:white"></i> Edit Categories</a>
+                <button type="button" class="btn btn-danger" onclick="handleDelete({{$category->id}})"><i class="fas fa-trash-alt"></i> Delete</button>
             </div>
             <ul class="list-group list-group-flush ">
 
 
-                <li class="list-group-item list-group-item-action"><strong>Name:</strong> {{$client->name}}</li>
-                <li class="list-group-item list-group-item-action"><strong>Surname:</strong> {{$client->surName}}</li>
-                <li class="list-group-item list-group-item-action"><strong>CPF/CNPJ:</strong> {{$client->cpfCnpj}}</li>
-                <li class="list-group-item list-group-item-action"><strong>RG:</strong> {{$client->rg}}</li>
-                <li class="list-group-item list-group-item-action"><strong>Date Born:</strong> {{$client->dateBorn}}</li>
-                <li class="list-group-item list-group-item-action"><strong>Date Admission:</strong> {{$client->dateAdmission}}</li>
-                <li class="list-group-item list-group-item-action"><strong>Photo:</strong> {{$client->photo}}</li>
+                <li class="list-group-item list-group-item-action"><strong>NameCategory:</strong> {{$category->nameCategory}}</li>
+                <li class="list-group-item list-group-item-action"><strong>Description</strong> {{$category->description}}</li>
+                <li class="list-group-item list-group-item-action"><img src="{{asset('storage/'.$category->figure)}}" alt="" width="400px" height="400px"></li>
             </ul>
 
         </div>
 
-        <form action="" method="POST" id="deleteClientForm">
+        <form action="" method="POST" id="deleteCategorieForm">
 
             @csrf
 
@@ -47,7 +43,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="deleteClientForm">Delete Client</h5>
+                            <h5 class="modal-title" id="deleteCategorieForm">Delete Categories</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -80,11 +76,9 @@
 
         function handleDelete(id) {
 
+            var form = document.getElementById('deleteCategorieForm')
 
-
-            var form = document.getElementById('deleteClientForm')
-
-            form.action = '/clients/' + id
+            form.action = '/categories/' + id
 
             $('#deleteModal').modal('show')
 

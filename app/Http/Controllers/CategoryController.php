@@ -19,20 +19,11 @@ class CategoryController extends Controller
         return view('categories.index')->with('categories', Category::all());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('categories.form');
     }
-
-
-
-
-
 
     public function store(CreateCategoryRequest $request)
     {
@@ -51,32 +42,15 @@ class CategoryController extends Controller
         return redirect(route('categories.index'));
     }
 
-
-
-
-
-
     public function show(Category $category)
     {
         return view('categories.show')->with('category', $category);
     }
 
-
-
-
-
-
-
     public function edit(Category $category)
     {
         return view('categories.form')->with('category', $category);
     }
-
-
-
-
-
-
 
     public function update(UpdateCategoryRequest $request, Category $category)
     {

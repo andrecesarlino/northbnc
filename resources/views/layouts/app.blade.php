@@ -97,6 +97,12 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="{{route('categories.index')}}">
+                    <i class="fas fa-user-friends"></i><span> Categorie</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="{{route('products.index')}}">
                     <i class="fas fa-user-friends"></i><span> Products</span>
                 </a>
