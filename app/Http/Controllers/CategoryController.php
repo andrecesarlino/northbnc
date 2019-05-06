@@ -74,7 +74,8 @@ class CategoryController extends Controller
 
     public function destroy(Category $category)
     {
-        $category->delete();
+        $category->Delete();
+
 
         session()->flash('success', 'Category deleted successfully!');
 
