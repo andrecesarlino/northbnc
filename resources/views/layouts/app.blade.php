@@ -113,6 +113,12 @@
                 </a>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('contacts.index')}}">
+                    <i class="fas fa-user-friends"></i><span> Contact</span>
+                </a>
+            </li>
+
 
         </ul>
     @endauth
